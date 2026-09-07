@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<!-- Responsive: viewport obligatorio para que el sitio se adapte al tamaño de pantalla -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tipografía personalizada + HTML responsivo</title>
+
+<!-- Tipografía por enlace (Google Fonts) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --purple: #3E00DB;
+    --text: #1A1A1A;
+    --bg: #FFFFFF;
+    --max-width: 960px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 2rem 1.5rem;
+    background: var(--bg);
+    color: var(--text);
+    /* la fuente importada por link se usa acá, con una fuente de respaldo */
+    font-family: "Manrope", sans-serif;
+    line-height: 1.5;
+  }
+
+  .contenedor {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: var(--purple);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 65ch;
+  }
+
+  /* Imagen responsiva: nunca desborda su contenedor */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+
+  figcaption {
+    font-size: 0.85rem;
+    color: #6B6B6B;
+  }
+
+  /* Media query: ajustes solo para pantallas chicas (celulares) */
+  @media (max-width: 768px) {
+    body {
+      padding: 1.25rem 1rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <h1>Tipografía personalizada + HTML responsivo</h1>
+
+    <p>
+      Este archivo es un ejemplo mínimo y editable. La tipografía
+      "Manrope" se carga desde Google Fonts mediante un
+      <code>&lt;link&gt;</code> en el <code>&lt;head&gt;</code>, y el
+      diseño se adapta al tamaño de pantalla gracias al viewport y a
+      la media query definida más abajo.
+    </p>
+
+    <figure>
+      <img src="img/ejemplo.jpg" alt="Descripción de la imagen de ejemplo" width="800" height="450">
+      <figcaption>La imagen se ajusta al ancho del contenedor (max-width: 100%).</figcaption>
+    </figure>
+
+    <p>
+      Reducí el ancho de la ventana del navegador (o revisá en el
+      celular) para ver cómo cambian el tamaño de los textos y los
+      márgenes en pantallas chicas.
+    </p>
+
+  </div>
+
+</body>
+</html>
